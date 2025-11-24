@@ -494,7 +494,6 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
 # ==============================
 # SECCIÓN: LABORATORIO DIGITAL Y FEEDBACK
 # ==============================
@@ -560,10 +559,12 @@ st.markdown(f"""
             <div class="lab-card-icon">📊</div>
             <div class="lab-card-name">Tableros de KPI personalizables</div>
         </div>
-        <div class="lab-card">
-            <div class="lab-card-icon">🖥️</div>
-            <div class="lab-card-name">Simuladores de escenarios de evolución</div>
-        </div>
+        <a href="https://simefcalculator.streamlit.app/" target="_blank" style="text-decoration:none;">
+            <div class="lab-card">
+                <div class="lab-card-icon">🖥️</div>
+                <div class="lab-card-name">Sistema Inteligente de Evaluación de Mecanismos de Falla</div>
+            </div>
+        </a>
         <div class="lab-card">
             <div class="lab-card-icon">💬</div>
             <div class="lab-card-name">Feedback en tiempo real y foros de usuarios</div>
