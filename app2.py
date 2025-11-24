@@ -25,7 +25,9 @@ img_logo = get_base64("Logo_blanco.png")
 img_api = get_base64("API.png")
 img_asnt = get_base64("ASNT.png")
 img_aws = get_base64("aws.png")
-
+img_tech = get_base64("TECHBRIDGE.png")
+img_evo = get_base64("evo.png")
+img_pt = get_base64("photo.jpg")
 # ==============================
 # FONDO DE LA APP
 # ==============================
@@ -50,29 +52,20 @@ st.markdown('<div id="inicio"></div>', unsafe_allow_html=True)
 st.markdown(f"""
 <div class="hero-text-container" style="
     text-align:center;
-    padding-top:15vh;
+    padding-top:2vh;
     color:white;
     animation: fadeSlide 1.8s ease-out forwards;
     opacity:0;
     transform:translateY(25px);
 ">
-    <h1 style="font-size:52px; font-weight:bold;">Bienvenido a Interinspect</h1>
-    <p style="font-size:22px; margin-top:15px;">
+     <img src="data:image/jpeg;base64,{img_pt}" style="width:500px; height:250px; border-radius:20px; object-fit:cover; margin-bottom:20px;" />
+    <h1 style="font-size:52px; font-weight:bold;">Bienvenido</h1>
+    <p style="font-size:22px; margin-top:8px;">
         La evolución de tu industria comienza aquí.<br>
-        Desde los retos actuales hacia un futuro digital inteligente.
+        Desde los retos actuales de optimización hacia un futuro digital <br>
+        inteligente y el control completo del negocio.
     </p>
-    <a href="https://www.youtube.com/watch?v=MySdlgJERcI" target="_blank" style="
-        display:inline-block;
-        margin-top:30px;
-        padding:15px 30px;
-        font-size:18px;
-        font-weight:bold;
-        color:white;
-        background:#ffd166;
-        border-radius:12px;
-        text-decoration:none;
-        transition:0.3s;
-    ">CONÓCENOS</a>
+
 </div>
 
 <style>
@@ -89,14 +82,14 @@ st.markdown(f"""
 # ==============================
 # SECCIÓN: SOBRE NOSOTROS
 # ==============================
-st.markdown('<div id="sobre" style="margin-top:280px;"></div>', unsafe_allow_html=True)
+st.markdown('<div id="sobre" style="margin-top:150px;"></div>', unsafe_allow_html=True)
 st.markdown(f"""
 <style>
 .about-us-card {{
     display: flex;
     flex-direction: row;
     gap: 24px;
-    background: linear-gradient(135deg, #253451 0%, #324665 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     border-radius: 20px;
     padding: 28px;
     box-shadow: 0 6px 26px rgba(20,30,55,0.18), 0 2px 14px rgba(44,62,80,0.08);
@@ -111,14 +104,28 @@ st.markdown(f"""
     flex: 1;
     min-width: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px; /* espacio entre logos */
 }}
 .about-us-left img {{
-    width: 250px;
-    height: 250px;
+    width: 120px;
+    height: 120px;
     border-radius: 24px;
     object-fit: cover;
+}}
+.additional-logos {{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap; /* que se acomoden en móviles */
+}}
+.additional-logos img {{
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    object-fit: contain;
 }}
 .about-us-right {{
     flex: 2;
@@ -145,6 +152,10 @@ st.markdown(f"""
 
 <div class="about-us-card">
     <div class="about-us-left">
+        <div class="additional-logos">
+            <img src="data:image/png;base64,{img_evo}" />
+            <img src="data:image/png;base64,{img_tech}" />
+        </div>
         <img src="data:image/png;base64,{img_logo}" />
     </div>
     <div class="about-us-right">
@@ -157,73 +168,22 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # ==============================
-# SECCIÓN: INSPECTORES CERTIFICADOS
-# ==============================
-st.markdown('<div id="inspectores" style="margin-top:20px;"></div>', unsafe_allow_html=True)
-st.markdown(f"""
-<style>
-.inspectors-section {{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    background: #f5f5f5;
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-}}
-.inspectors-title {{
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #253451;
-}}
-.inspectors-logos {{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-}}
-.inspectors-card {{
-    background: white;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: transform .33s, box-shadow .33s;
-}}
-.inspectors-card:hover {{
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
-}}
-.inspectors-card img {{
-    width: 360px;
-    height: 120px;
-    object-fit: contain;
-}}
-</style>
-
-<div class="inspectors-section">
-    <div class="inspectors-title">Contamos con inspectores certificados</div>
-    <div class="inspectors-logos">
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_api}" /></div>
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_asnt}" /></div>
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_aws}" /></div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# ==============================
 # SECCIÓN: EXPLORA POR INDUSTRIA
 # ==============================
 st.markdown('<div id="industria" style="margin-top:20px;"></div>', unsafe_allow_html=True)
 st.markdown(f"""
 <style>
+
 .industry-section {{
-    background: linear-gradient(135deg, #253451 0%, #324665 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 32px;
     color: white;
 }}
+
+
+
 .industry-title {{
     font-size: 1.8rem;
     font-weight: 700;
@@ -241,18 +201,22 @@ st.markdown(f"""
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }}
+
 .industry-card {{
-    background: #fff;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     transition: transform .33s, box-shadow .33s;
 }}
+
 .industry-card:hover {{
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 12px 26px rgba(0,0,0,0.2);
 }}
+
+
 .industry-name {{
     font-weight: 700;
     margin-bottom: 8px;
@@ -308,7 +272,7 @@ st.markdown('<div id="servicios" style="margin-top:20px;"></div>', unsafe_allow_
 st.markdown(f"""
 <style>
 .services-section {{
-    background: linear-gradient(135deg, #253451 0%, #324665 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 32px;
@@ -331,18 +295,21 @@ st.markdown(f"""
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }}
+
 .services-card {{
-    background: #fff;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     transition: transform .33s, box-shadow .33s;
 }}
+
 .services-card:hover {{
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 12px 26px rgba(0,0,0,0.2);
 }}
+
 .services-name {{
     font-weight: 700;
     margin-bottom: 8px;
@@ -396,7 +363,7 @@ st.markdown('<div id="proceso" style="margin-top: 20px;"></div>', unsafe_allow_h
 st.markdown(f"""
 <style>
 .timeline-section {{
-    background: linear-gradient(135deg, #324665 0%, #253451 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     border-radius: 20px;
     padding: 40px 28px;
     margin-bottom: 32px;
@@ -426,11 +393,12 @@ st.markdown(f"""
     left: 5%;
     width: 90%;
     height: 10px;
-    background: #ffd166;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    border-radius: 5px;
     z-index: 0;
 }}
 .phase-card {{
-    background: #fff;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
     color: #253451;
     border-radius: 16px;
     padding: 20px;
@@ -494,6 +462,8 @@ st.markdown(f"""
     </div>
 </div>
 """, unsafe_allow_html=True)
+
+
 # ==============================
 # SECCIÓN: LABORATORIO DIGITAL Y FEEDBACK
 # ==============================
@@ -501,7 +471,7 @@ st.markdown('<div id="laboratorio" style="margin-top:40px;"></div>', unsafe_allo
 st.markdown(f"""
 <style>
 .lab-section {{
-    background: linear-gradient(135deg, #1e2a3a 0%, #253451 100%);
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     color: white;
     border-radius: 20px;
     padding: 40px 28px;
@@ -525,7 +495,7 @@ st.markdown(f"""
     gap: 20px;
 }}
 .lab-card {{
-    background: #fff;
+    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
@@ -533,10 +503,12 @@ st.markdown(f"""
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     transition: transform .33s, box-shadow .33s;
 }}
+
 .lab-card:hover {{
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 12px 26px rgba(0,0,0,0.2);
 }}
+
 .lab-card-icon {{
     font-size: 36px; /* Aquí puedes poner un emoji o imagen pequeña */
     margin-bottom: 12px;
@@ -572,6 +544,62 @@ st.markdown(f"""
     </div>
     <div class="lab-footer">
         Tu opinión guía nuestra innovación.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+
+# ==============================
+# SECCIÓN: INSPECTORES CERTIFICADOS
+# ==============================
+st.markdown('<div id="inspectores" style="margin-top:20px;"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+.inspectors-section {{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+}}
+.inspectors-title {{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #253451;
+}}
+.inspectors-logos {{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}}
+.inspectors-card {{
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+}}
+.inspectors-card:hover {{
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+.inspectors-card img {{
+    width: 360px;
+    height: 120px;
+    object-fit: contain;
+}}
+</style>
+
+<div class="inspectors-section">
+    <div class="inspectors-title">Contamos con inspectores certificados</div>
+    <div class="inspectors-logos">
+        <div class="inspectors-card"><img src="data:image/png;base64,{img_api}" /></div>
+        <div class="inspectors-card"><img src="data:image/png;base64,{img_asnt}" /></div>
+        <div class="inspectors-card"><img src="data:image/png;base64,{img_aws}" /></div>
     </div>
 </div>
 """, unsafe_allow_html=True)
