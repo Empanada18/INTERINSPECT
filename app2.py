@@ -3,6 +3,15 @@ import base64
 import streamlit.components.v1 as components
 
 # ==============================
+# CONFIGURACIÓN GENERAL
+# ==============================
+st.set_page_config(
+    page_title="Interinspect",
+    page_icon="🛠️",
+    layout="wide"
+)
+
+# ==============================
 # CONTENEDOR DE PARTÍCULAS (200px alto, fondo negro)
 # ==============================
 particles_html = """
@@ -34,16 +43,6 @@ particlesJS("particles-js", {
 """
 
 components.html(particles_html, height=220)
-
-
-# ==============================
-# CONFIGURACIÓN GENERAL
-# ==============================
-st.set_page_config(
-    page_title="Interinspect",
-    page_icon="🛠️",
-    layout="wide"
-)
 
 # ==============================
 # FUNCIÓN PARA IMAGEN BASE64
@@ -101,12 +100,16 @@ st.markdown(f"""
     opacity:0;
     transform:translateY(25px);
 ">
-     <img src="data:image/jpeg;base64,{img_pt}" style="width:500px; height:290px; border-radius:20px; object-fit:cover; margin-bottom:20px;" />
+     <img src="data:image/jpeg;base64,{img_pt}" style="width:500px; height:290px; border-radius:20px; object-fit:cover; margin-bottom:50px;" />
     <h1 style="font-size:52px; font-weight:bold;">Bienvenido</h1>
+    <h3 style="font-size:30px; font-weight:bold; margin-top:-10px; color: #A295C1;">
+        "Ecosistema Cognitivo para la Evolución Industrial Inteligente"
+    </h3>
     <p style="font-size:22px; margin-top:8px;">
-        La evolución de tu industria comienza aquí.<br>
-        Desde los retos actuales de optimización hacia un futuro digital <br>
-        inteligente y el control completo del negocio.
+        La transformación digital industrial ya no es un proyecto finito. Es una mutación evolutiva del ADN <br>
+        organizacional: un proceso continuo donde la sensorización crítica, el análisis cognitivo, la prescripción <br>
+        operativa, la monetización del riesgo y la maximizacion de rentabilidad operacional convergen en un <br>
+        organismo inteligente que aprende de manera evolutiva.
     </p>
 
 </div>
@@ -202,18 +205,18 @@ st.markdown(f"""
         <img src="data:image/png;base64,{img_logo}" />
     </div>
     <div class="about-us-right">
-        <div class="about-us-title">Sobre Nosotros</div>
-        <p>Somos un ecosistema innovador que une tecnología avanzada y pasión por transformar procesos industriales y PYMES, construyendo un futuro sustentable e inteligente.</p>
-        <p>Creemos que la digitalización es una evolución necesaria, accesible y poderosa para quienes buscan eficiencia, seguridad y sostenibilidad.</p>
-        <p>Queremos ser tu socio estratégico en cada paso de la transformación, entregando soluciones escalables, personalizadas y basadas en inteligencia real.<p>
+        <div class="about-us-title">IDENTIDAD CORPORATIVA</div>
+        <p><strong>Quiénes Somos</strong><br> Somos arquitectos de inteligencias industriales avanzadas. Diseñamos ecosistemas cognitivos capaces de percibir, interpretar, adelantar escenarios, tomar decisiones y evolucionar junto a tu operación.</p>
+        <p><strong>Nuestra Visión</strong><br>Construir organizaciones industriales autónomas, resilientes y adaptativas, donde la cognición técnica se convierte en ventaja competitiva.</p>
+        <p><strong>Nuestro Propósito</strong><br>Transformar industrias desde su estructura operativa y cultura organizacional, activando una evolución continua basada en ciencia, ingeniería y aprendizaje automatizado.</p>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # ==============================
-# SECCIÓN: EXPLORA POR INDUSTRIA
+# SECCIÓN: INDUSTRY-CX CORE
 # ==============================
-st.markdown('<div id="industria" style="margin-top:20px;"></div>', unsafe_allow_html=True)
+st.markdown('<div id="core" style="margin-top:20px;"></div>', unsafe_allow_html=True)
 st.markdown(f"""
 <style>
 
@@ -224,8 +227,6 @@ st.markdown(f"""
     margin-bottom: 32px;
     color: white;
 }}
-
-
 
 .industry-title {{
     font-size: 1.8rem;
@@ -277,74 +278,113 @@ st.markdown(f"""
 </style>
 
 <div class="industry-section">
-    <div class="industry-title">Explora por Industria</div>
+    <div class="industry-title">INDUSTRY-CX CORE — EL NÚCLEO COGNITIVO</div>
     <div class="industry-intro">
-        Cada industria tiene sus particularidades. Aquí te mostramos las soluciones que transforman tu sector.
+        INDUSTRY-CX CORE es ese organismo cognitivo que evoluciona contigo, con tus procesos, con tus mercados y con tu cultura técnica-organizacional.
     </div>
+    <div class="industry-title">Un organismo inteligente capaz de:</div>
     <div class="industry-grid">
         <div class="industry-card">
-            <div class="industry-name">Minería y Metalurgia Extractiva</div>
-            <div class="industry-description">Monitoreo avanzado, trazabilidad, análisis predictivo y seguridad operacional.</div>
+            <div class="industry-name">Percibir</div>
+            <div class="industry-description">Sensorización, telemetría, datos operativos IIoT, 3D, imágenes, NDT.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Metalurgia Física</div>
-            <div class="industry-description">Ensayos, caracterización, control de calidad y optimización de procesos metalúrgicos.</div>
+            <div class="industry-name">Actuar</div>
+            <div class="industry-description">Automatización de workflows y toma de decisiones.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Energía</div>
-            <div class="industry-description">Redes inteligentes, eficiencia energética y soluciones integradas de gestión.</div>
+            <div class="industry-name">Integrar</div>
+            <div class="industry-description">Fusión multimodal (modelos físicos + ML).</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Hidrocarburos</div>
-            <div class="industry-description"> Integridad de activos, operación segura y monitoreo en tiempo real.</div>
+            <div class="industry-name">Aprender</div>
+            <div class="industry-description"> Ajuste continuo del sistema.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Agroindustria</div>
-            <div class="industry-description">Trazabilidad, control ambiental, manejo hídrico y gestión de calidad.</div>
+            <div class="industry-name">Analizar</div>
+            <div class="industry-description">Diagnóstico + simulación + predicción + prescripción.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Manufactura</div>
-            <div class="industry-description">Automatización modular, control de procesos y eficiencia operativa continua.</div>
+            <div class="industry-name">Monetizar</div>
+            <div class="industry-description">VaRO (Value at Risk Operational), CEIP (Costo Esperado de Interrupción de Producción), OPEX (Operational Expenditure).</div>
         </div>        
     </div>
-    <div class="industry-footer">
-        Visualiza la solución que transforma tu operación y acerca el futuro a tu realidad.
+    <div class="industry-title" style="margin-top: 20px;">🛠️ Instrumentación - 2da Capa (Ecosistema)</div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">Capa Sensorial & IIoT</div>
+            <div class="industry-description">
+            * IIoT multisensor (vibración, presión, caudal, energía)
+            * NDT avanzado (UT/PAUT, EMAT, AE, MFL, LRUT) <br>
+            * Termografía IR (dron + fija + portátil) <br>
+            * Geotecnia cognitiva (piezómetros, fibra óptica) <br>
+            * Visión computacional industrial <br>
+            * LIDAR 3D <br>
+            * Integración OT/IT (SCADA, DCS, PLC) <br>
+            * Edge AI + Cloud ML
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Capa de Inteligencia</div>
+            <div class="industry-description">
+            * Gateways de datos OT/IT <br>
+            * GPU/TPU para entrenamiento ML <br>
+            * Motor prescriptivo con reglas sectoriales <br>
+            * Gemelos cognitivos (físico + estadístico + ML) <br>
+            * Dashboards 3D interactivos <br>
+            * Integración con IA agéntica
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Arquitectura & Core</div>
+            <div class="industry-description">
+            * Arquitectura híbrida Cloud-Edge <br>
+            * Algoritmos ML + modelos físicos <br>
+            * Pipelines n8n industriales <br>
+            * Integración multiprotocolo (OPC-UA, MQTT, REST) <br>
+            * Repositorios sectoriales de inteligencia <br>
+            * Núcleo cognitivo INDUSTRY-CX CORE
+            </div>
+        </div>      
     </div>
 </div>
 """, unsafe_allow_html=True)
 
+
 # ==============================
-# SECCIÓN: EXPLORA POR SERVICIOS
+# SECCIÓN: EXPLORA POR INDUSTRIA (ESTILO MEJORADO)
 # ==============================
-st.markdown('<div id="servicios" style="margin-top:20px;"></div>', unsafe_allow_html=True)
+st.markdown('<div id="industria" style="margin-top:20px;"></div>', unsafe_allow_html=True)
 st.markdown(f"""
 <style>
-.services-section {{
+
+.industry-section {{
     background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 32px;
     color: white;
 }}
-.services-title {{
+
+.industry-title {{
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 16px;
     color: #A295C1;
     text-align: center;
 }}
-.services-intro {{
+.industry-intro {{
     font-size: 1.05rem;
     margin-bottom: 24px;
     text-align: center;
 }}
-.services-grid {{
+.industry-grid {{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }}
 
-.services-card {{
+.industry-card {{
     background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     color: #253451;
     border-radius: 16px;
@@ -353,19 +393,46 @@ st.markdown(f"""
     transition: transform .33s, box-shadow .33s;
 }}
 
-.services-card:hover {{
+.industry-card:hover {{
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 12px 26px rgba(0,0,0,0.2);
 }}
 
-.services-name {{
-    font-weight: 700;
+/* -- CAMBIOS DE ESTILO AQUÍ -- */
+
+.industry-name {{
+    text-align: center;
+    font-weight: 800; /* Mayor negrita */
+    font-size: 1.1rem; /* Un poco más grande */
     margin-bottom: 8px;
+    color: #253451; /* Color principal */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    padding-bottom: 5px; /* Pequeño espacio debajo del título */
+    border-bottom: 2px solid #A295C1; /* Separador morado */
 }}
-.services-description {{
+
+.industry-link {{
+    text-align: center;
+    font-weight: 700;
     font-size: 0.95rem;
+    margin-top: 15px; /* Espacio antes del enlace/CTA */
+    margin-bottom: 8px;
+    color: #A295C1; /* Color morado para destacar */
+    cursor: pointer; /* Indica que es clickable */
+    transition: text-decoration 0.3s;
 }}
-.services-footer {{
+
+.industry-link:hover {{
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}}
+
+.industry-description {{
+    font-size: 0.95rem;
+    line-height: 1.4; /* Mejora la legibilidad de las listas */
+    color: #3d4e6d; /* Un gris-azulado más suave para el cuerpo de texto */
+}}
+
+.industry-footer {{
     text-align: center;
     margin-top: 24px;
     font-style: italic;
@@ -373,42 +440,225 @@ st.markdown(f"""
 }}
 </style>
 
-<div class="services-section">
-    <div class="services-title">Explora por Servicios</div>
-    <div class="services-intro">
-        Desde servicios amigables para empezar tu transformación, hasta innovaciones disruptivas para liderar el mercado.
+<div class="industry-section">
+    <div class="industry-title">Explora por Industria</div>
+    <div class="industry-intro"><strong>Motores Cognitivos Sectoriales (Industrial Cognitive Engines)</strong></div>
+    <div class="industry-intro">
+        Cada industria posee un ADN operativo distinto. Nuestros motores cognitivos se adaptan a esa estructura.
     </div>
-    <div class="services-grid">
-        <div class="services-card">
-            <div class="services-name">Monitoreo básico</div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">MINEX-IN CORE - Minería</div>
+            <div class="industry-description">Integridad predictiva, metalurgia inteligente, geotecnia cognitiva y optimización de plantas concentradoras.</div>
+            <div class="industry-link">Conocer el MINEX-IN CORE</div>           <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   drones IR <br>
+            •   espesadores & slurry pipelines <br>
+            •   sensores de densidad, torque, carga <br>
+            •   UT/PAUT para piping minero <br>
+            •   piezómetros/fibra óptica <br>
+            •   ML para recuperación y granulometría
         </div>
-        <div class="services-card">
-            <div class="services-name">Monitoreo avanzado</div>
         </div>
-        <div class="services-card">
-            <div class="services-name">Mantenimiento predictivo inteligente</div>
+        <div class="industry-card">
+            <div class="industry-name">ENERG-IN CORE - Energía</div>
+            <div class="industry-description">Eficiencia energética, integridad térmica, redes inteligentes, fallas eléctricas.</div>
+            <div class="industry-link">Conocer el ENERG-IN CORE</div>           <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   termografía de subestaciones <br>
+            •   descargas parciales <br>
+            •   sensores de potencia & armónicos <br>
+            •   vibración en turbinas <br>
+            •   edge AI para anomalías eléctricas
+            </div>
         </div>
-        <div class="services-card">
-            <div class="services-name">Data analitics</div>
+        <div class="industry-card">
+            <div class="industry-name">OILGAS-IN CORE - Oil & Gas</div>
+            <div class="industry-description">Integridad Estructural API, gestion de la corrosión, RBI 580/581 Inspeccion basada en Riesgo, detección temprana y prediccón de fallas críticas en tuberías, tanques y sistemas presurizados.</div>
+            <div class="industry-link">Conocer OILGAS-IN CORE</div>             <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   MFL <br>
+            •   pigging inteligente <br>
+            •   corrosímetros electroquímicos <br>
+            •   UT/PAUT de alta velocidad <br>
+            •   visión ATEX <br>
+            •   monitoreo continuo de H2S
+            </div>
         </div>
-        <div class="services-card">
-            <div class="services-name">Digital Twins y simulación</div>
+        <div class="industry-card">
+            <div class="industry-name">MANUF-IN CORE - Manufactura</div>
+            <div class="industry-description">OEE cognitivo, scrap cero, computer vision para calidad y líneas autónomas.</div>
+            <div class="industry-link">Conocer MAFUF-IN CORE</div>          <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   cámaras industriales 4K <br>
+            •   sensores de vibración/acústica <br>
+            •   sistemas robotizados <br>
+            •   espectroscopía de inspección <br>
+            •   PLC + IIoT assembly line
+            </div>
         </div>
-        <div class="services-card">
-            <div class="services-name">IA agéntica y edge AI</div>
+        <div class="industry-card">
+            <div class="industry-name">AGRO-IN CORE - Agroindustria</div>
+            <div class="industry-description">IA climática, eficiencia hídrica, trazabilidad blockchain, control de plagas.</div>
+            <div class="industry-link">Conocer AGRO-IN CORE</div>           <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   NDVI + drones multiespectrales <br>
+            •   sensores de humedad & CO₂ <br>
+            •   estaciones meteorológicas <br>
+            •   RFID, blockchain IoT <br>
+            •   visión para madurez & plagas
+            </div>
         </div>
-        <div class="services-card">
-            <div class="services-name">Blockchain y economía circular</div>
+        <div class="industry-card">
+            <div class="industry-name">METAL-IN CORE - Metalurgia (extractiva + física)</div>
+            <div class="industry-description">Hornos inteligentes, fundición optimizada, refinación predictiva, laminación controlada.</div>
+            <div class="industry-link">Conocer METAL-IN CORE</div>          <div class="industry-description">
+            <strong>Instrumentación:</strong><br>
+            •   pirómetros ópticos <br>
+            •   termopares de alta temperatura <br>
+            •   sensores de deformación <br>
+            •   visión térmica industrial <br>
+            •   ML para curvas térmicas
+            </div>
         </div>
-        <div class="services-card">
-            <div class="services-name">Formación y acompañamiento</div>
-        </div>
-    </div>
-    <div class="services-footer">
-        ¿Quieres probar cómo estas soluciones pueden impactar en tu negocio? Simula tu evolución aquí.
-    </div>
 </div>
 """, unsafe_allow_html=True)
+
+# ==============================
+# SECCIÓN: EXPLORAR POR CAPACIDADES COGNITIVAS
+# ==============================
+st.markdown('<div id="capacidades" style="margin-top:20px;"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+
+<style>
+/* Estilo del contenedor principal (sin cambios) */
+.industry-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+.industry-title {{
+    font-size: 1.8rem;
+    font-weight: 800; /* Mayor negrita */
+    margin-bottom: 16px;
+    color: #A295C1;
+    text-align: center;
+}}
+.industry-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Aumento el tamaño mínimo para mejor lectura */
+    gap: 20px;
+}}
+.industry-card {{
+    background: linear-gradient(135deg, #E0D9F0 0%, #C9BFE7 100%); /* Cambio el orden del gradiente */
+    color: #253451;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+    display: flex; /* Añadido para igualar altura */
+    flex-direction: column; /* Añadido para igualar altura */
+}}
+.industry-card:hover {{
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+
+/* --- ESTILOS MEJORADOS PARA LA VISUALIZACIÓN --- */
+
+.industry-name {{
+    text-align: center;
+    font-weight: 800; 
+    font-size: 1.2rem; /* Más grande */
+    margin-bottom: 12px;
+    color: #253451; 
+    text-transform: uppercase; /* MAYÚSCULAS */
+    padding-bottom: 5px; 
+    border-bottom: 3px solid #A295C1; /* Separador más grueso y visible */
+    flex-shrink: 0; 
+}}
+.instrumentation-list {{ /* Nueva clase para la lista de instrumentación */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #4b4b4b; /* Un gris más oscuro */
+    flex-grow: 1; /* Esto ayuda a que todas las tarjetas tengan la misma altura */
+    margin-top: 2px;
+}}
+.instrumentation-list strong {{
+    color: #253451; /* Destaca el título "Instrumentación" */
+    display: block;
+    margin-bottom: 2px;
+}}
+</style>
+
+<div class="industry-section">
+    <div class="industry-title" style="margin-top: 20px;">EXPLORAR POR CAPACIDADES COGNITIVAS</div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">Integridad Predictiva</div>
+            <div class="industry-description">
+            Identifica, mide y anticipa mecanismos de daño antes de que se vuelvan críticos, combinando datos de inspección avanzada con análisis cognitivo para estimar vida remanente y riesgo estructural. Permite priorizar reparaciones, reducir fallas y extender la fiabilidad de activos.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            UT/PAUT, EMAT, MFL, Acoustic Emission (AE), termografía IR, drones, LRUT, corrosímetros, análisis de vida remanente, digital twins de integridad.
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Mantenimiento Cognitivo</div>
+            <div class="industry-description">
+            Detecta patrones de deterioro, anomalías y fallas incipientes mediante análisis vibracional, termografía y datos IIoT, generando recomendaciones automáticas basadas en modelos ML y reglas operativas. Reduce tiempos muertos, optimiza repuestos y habilita mantenimiento prescriptivo.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            Sensores de vibración (acc/vel), termografía térmica, IoT industrial, streaming de datos, edge AI para detección de anomalías, prescripción automática.
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Optimización de Procesos</div>
+            <div class="industry-description">
+            Integra modelos ML, modelos físicos y variables críticas de operación para identificar cuellos de botella, optimizar parámetros metalúrgicos o productivos y maximizar eficiencia energética, química o mecánica. Permite operar en el punto óptimo, con ajustes dinámicos basados en resultados reales.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            Torque, densidad, caudal, granulometría, temperatura, reactivos, sensores de energía, modelos híbridos (físico + ML), simulación cognitiva.
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Seguridad Prescriptiva (SPIR-HSE)</div>
+            <div class="industry-description">
+            Detecta condiciones inseguras, comportamientos de riesgo y patrones que preceden incidentes mediante visión computacional e IA cognitiva, emitiendo alertas prescriptivas y acciones recomendadas. Integra monitoreo ambiental, humano y operacional en un sistema HSE inteligente.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            Visión para comportamiento seguro, detección automatizada de EPP, sensores ambientales, predicción HSE basada en ML, alarmas cognitivas, análisis de proximidad y zonas críticas.
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Formación y Entrenamiento Inteligente (AR/AI)</div>
+            <div class="industry-description">
+            Guía procedimientos operativos mediante realidad aumentada e inteligencia cognitiva, reduciendo errores humanos, acelerando el aprendizaje técnico y estandarizando tareas críticas. El sistema actúa como un “copiloto industrial” que asiste al operador en tiempo real.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            HMS (Hybrid Mentorship System), RA operativa, visores AR/VR, workflows guiados, reconocimiento de pasos, checklists inteligentes, instructivos cognitivos.
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Monetización del Riesgo y Maximización de Rentabilidad</div>
+            <div class="industry-description">
+            Convierte datos técnicos en impacto financiero real monetizado, cuantificando cómo cada falla o su potencial de ocurrencia, una desviación o anomalía afecta costos, OPEX, disponibilidad y producción. Permite priorizar decisiones operacionales prescriptivas según retorno económico, reduciendo pérdidas y maximizando rentabilidad operacional.<br><br> 
+            </div>
+            <div class="instrumentation-list">
+            <strong>Instrumentación (segunda capa):</strong> <br>
+            Modelo VaRO (Value at Risk Operational), simulaciones de degradación, OPEX (Operational Expenditure), optimización energética, ML financiero, gemelos económicos.
+            </div>
+        </div>
+</div>
+""", unsafe_allow_html=True)
+
 
 # ==============================
 # SECCIÓN: PROCESO DE VALOR
@@ -491,32 +741,384 @@ st.markdown(f"""
 </style>
 
 <div class="timeline-section">
-    <div class="timeline-title">Proceso de Valor</div>
+    <div class="timeline-title">PROCESO DE VALOR - EL VIAJE EVOLUTIVO</div>
     <div class="timeline-intro">
-        Tu transformación digital se hace paso a paso, con acompañamiento experto y resultados medibles.
+        Tu operación sigue una trayectoria diseñada hacia autonomía cognitiva.
     </div>
     <div class="timeline-container">
         <div class="timeline-line"></div>
         <div class="phase-card">
-            <div class="phase-name">Descubrimiento y diagnóstico</div>
-            <div class="phase-description">Analizamos tu operación y detectamos oportunidades de mejora.</div>
+            <div class="phase-name">Fase 1 - Diagnóstico Cognitivo</div>
+            <div class="phase-description">Evaluación técnica + digital + NDT + sensorización.</div>
         </div>
         <div class="phase-card">
-            <div class="phase-name">Pilotaje y prueba de concepto</div>
-            <div class="phase-description">Implementamos soluciones a pequeña escala para validar impacto.</div>
+            <div class="phase-name">Fase 2 - Pilotaje Dirigido</div>
+            <div class="phase-description">Edge AI + sensores + workflows Automatizados.</div>
         </div>
         <div class="phase-card">
-            <div class="phase-name">Escalabilidad progresiva</div>
-            <div class="phase-description">Extendemos las soluciones a toda la operación de manera segura y controlada.</div>
+            <div class="phase-name">Fase 3 - Integración Escalable</div>
+            <div class="phase-description">Despliegue de las capacidades cognitivas requeridas.</div>
         </div>
         <div class="phase-card">
-            <div class="phase-name">Innovación continua y co-creación</div>
-            <div class="phase-description">Mejoramos continuamente con tu feedback y nuevas tecnologías.</div>
+            <div class="phase-name">Fase 4 - Gemelos Cognitivos</div>
+            <div class="phase-description">Modelos 3D + simulación + prescripción.</div>
+        </div>
+        <div class="phase-card">
+            <div class="phase-name">Fase 5 - Autonomía Operativa</div>
+            <div class="phase-description">Proceso autoajustable con aprendizaje continuo.</div>
         </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
 
+# ==============================
+# SECCIÓN: GESTIÓN TECNOLÓGICA & CO-INNOVACIÓN (I+D+I)
+# ==============================
+st.markdown('<div id="idi"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+
+.industry-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+
+.industry-title {{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #A295C1;
+    text-align: center;
+}}
+.industry-intro {{
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    text-align: center;
+}}
+.industry-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}}
+
+.industry-card {{
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
+    color: #253451;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+}}
+
+.industry-card:hover {{
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+
+
+.industry-name {{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+}}
+.industry-description {{
+    font-size: 0.95rem;
+}}
+.industry-footer {{
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 1rem;
+}}
+</style>
+
+<div class="industry-section">
+    <div class="industry-title">GESTIÓN TECNOLÓGICA & CO-INNOVACIÓN (I+D+I)</div>
+    <div class="industry-intro">
+        Co-evolucionamos contigo.
+    </div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">Acompañamos desde:</div>
+            <div class="industry-description">vigilancia tecnológica, exploración de soluciones, prototipado, pruebas de campo, industrialización, escalamiento.</div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Instrumentación:</div>
+            <div class="industry-description">Bancos de prueba, sensores prototipo, simuladores, experimentación ML, documentación técnica, integración API.</div>
+        </div>        
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# ==============================
+# SECCIÓN: MADUREZ DIGITAL & EVOLUCIÓN COGNITIVA
+# ==============================
+st.markdown('<div id="madurez" style="margin-top:20px;"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+.services-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+.services-title {{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #A295C1;
+    text-align: center;
+}}
+.services-intro {{
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    text-align: center;
+}}
+.services-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}}
+
+.services-card {{
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
+    color: #253451;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+    text-align: center;
+}}
+
+.services-card:hover {{
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+
+.services-name {{
+    font-weight: 700;
+    margin-bottom: 8px;
+}}
+.services-description {{
+    font-size: 0.95rem;
+}}
+.services-footer {{
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 1rem;
+}}
+</style>
+
+<div class="services-section">
+    <div class="services-title">MADUREZ DIGITAL & EVOLUCIÓN COGNITIVA</div>
+    <div class="services-intro">
+        ¿Dónde estás hoy? ¿Hacia dónde puedes evolucionar?<br>
+        Niveles:
+    </div>
+    <div class="services-grid">
+        <div class="services-card">
+            <div class="services-name">0<br>Operación intuitiva</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">1<br>igitalización inicial</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">2<br>Integración OT/IT</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">3<br>Predicción</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">4<br>Prescripción</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">5<br>Autonomía cognitiva</div>
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# ==============================
+# SECCIÓN: LABORATORIO COGNITIVO & SIMULADOR DE EVOLUCIÓN
+# ==============================
+st.markdown('<div id="lab"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+
+.industry-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+
+.industry-title {{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #A295C1;
+    text-align: center;
+}}
+.industry-intro {{
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    text-align: center;
+}}
+.industry-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}}
+
+.industry-card {{
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
+    color: #253451;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+}}
+
+.industry-card:hover {{
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+
+
+.industry-name {{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+}}
+.industry-description {{
+    font-size: 0.95rem;
+}}
+.industry-footer {{
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 1rem;
+}}
+</style>
+
+<div class="industry-section">
+    <div class="industry-title">LABORATORIO COGNITIVO & SIMULADOR DE EVOLUCIÓN</div>
+    <div class="industry-intro">
+        Explora, mide y proyecta el futuro de tu operación.<br>
+        Un espacio integral donde puedes:
+    </div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">Experimentar (capa técnica):</div>
+            <div class="industry-description">
+            •	gemelos cognitivos<br>
+            •	modelos predictivos<br>
+            •	simuladores de falla<br>
+            •	dashboards 3D<br>
+            •	KPIs cognitivos<br>
+            •	análisis técnico y operativo
+            </div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Proyectar (capa estratégica):</div>
+            <div class="industry-description">
+            •	disponibilidad futura<br>
+            •	reducción de riesgo<br>
+            •	ahorro energético<br>
+            •	impacto financiero<br>
+            •	escenarios por industria<br>
+            •	simulaciones 6m / 1 año / 3 años
+            </div>
+        </div>        
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# ==============================
+# SECCIÓN: CONTACTO INTELIGENTE
+# ==============================
+st.markdown('<div id="ctoit"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+
+.industry-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+
+.industry-title {{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #A295C1;
+    text-align: center;
+}}
+.industry-intro {{
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    text-align: center;
+}}
+.industry-grid {{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}}
+
+.industry-card {{
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
+    color: #253451;
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .33s, box-shadow .33s;
+}}
+
+.industry-card:hover {{
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
+}}
+
+
+.industry-name {{
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 8px;
+}}
+.industry-description {{
+    font-size: 0.95rem;
+}}
+.industry-footer {{
+    text-align: center;
+    margin-top: 24px;
+    font-style: italic;
+    font-size: 1rem;
+}}
+</style>
+
+<div class="industry-section">
+    <div class="industry-title">CONTACTO INTELIGENTE</div>
+    <div class="industry-grid">
+        <div class="industry-card">
+            <div class="industry-name">Onboarding guiado por IA:</div>
+            <div class="industry-description">
+            •	prediagnóstico<br>
+            •	recomendación de capacidades<br>
+            •	match por industria<br>
+            •	agendamiento inteligente
+            </div>
+        </div>        
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ==============================
 # SECCIÓN: LABORATORIO DIGITAL Y FEEDBACK
@@ -677,3 +1279,31 @@ with st.expander("Abrir Formulario y Opciones de Contacto", expanded=False):
 # 3. Cierre visual de la sección (opcional)
 # ----------------------------------------------------
 st.markdown('<div style="background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%); height: 20px; border-radius: 0 0 20px 20px; margin-bottom: 32px;"></div>', unsafe_allow_html=True)
+
+# ==============================
+# SECCIÓN: CIERRE INSTITUCIONAL
+# ==============================
+st.markdown('<div id="ctoit"></div>', unsafe_allow_html=True)
+st.markdown(f"""
+<style>
+
+.industry-section {{
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 32px;
+    color: white;
+}}
+.industry-intro {{
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    text-align: center;
+}}
+</style>
+
+<div class="industry-section">
+    <div class="industry-intro">
+        "INDUSTRY-CX CORE no es una plataforma tecnológica. Es un organismo industrial cognitivo que evoluciona con tu empresa transformando procesos, activos y personas."
+    </div>
+</div>
+""", unsafe_allow_html=True)
