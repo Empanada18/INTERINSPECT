@@ -1,5 +1,40 @@
 import streamlit as st
 import base64
+import streamlit.components.v1 as components
+
+# ==============================
+# CONTENEDOR DE PARTÍCULAS (200px alto, fondo negro)
+# ==============================
+particles_html = """
+<div id="particles-js"></div>
+
+<style>
+#particles-js {
+    position: relative;
+    width: 100%;
+    height: 200px; 
+    background: #000000; /* Fondo negro sólido */
+    margin-bottom: 20px;  /* Espacio debajo del bloque */
+    z-index: 1;
+}
+</style>
+
+<!-- Script de partículas -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 50 },
+        "size": { "value": 3 },
+        "color": { "value": "#ffffff" },
+        "line_linked": { "color": "#ffffff" }
+    }
+});
+</script>
+"""
+
+components.html(particles_html, height=220)
+
 
 # ==============================
 # CONFIGURACIÓN GENERAL
@@ -20,28 +55,36 @@ def get_base64(image_path):
 # ==============================
 # CARGAR IMÁGENES
 # ==============================
-img_fondo = get_base64("Fondo.png")
 img_logo = get_base64("Logo_blanco.png")
 img_api = get_base64("API.png")
 img_asnt = get_base64("ASNT.png")
 img_aws = get_base64("aws.png")
 img_tech = get_base64("TECHBRIDGE.png")
 img_evo = get_base64("evo.png")
-img_pt = get_base64("photo.jpg")
+img_pt = get_base64("photo.png")
+img_ng = get_base64("negro.jpg")
+
 # ==============================
-# FONDO DE LA APP
+# FONDO CON IMAGEN img_ng
 # ==============================
 st.markdown(f"""
 <style>
 [data-testid="stAppViewContainer"] {{
-    background: url("data:image/png;base64,{img_fondo}") !important;
-    background-size: cover !important;
-    background-position: center !important;
+    background-image: url("data:image/jpeg;base64,{img_ng}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }}
-[data-testid="stHeader"] {{ background: transparent !important; }}
+
+[data-testid="stHeader"] {{ 
+    background: transparent !important; 
+}}
+
 .block-container {{
-    padding-top: 50px !important;
+    padding-top: 20px !important;
+    background: transparent !important;
 }}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -58,7 +101,7 @@ st.markdown(f"""
     opacity:0;
     transform:translateY(25px);
 ">
-     <img src="data:image/jpeg;base64,{img_pt}" style="width:500px; height:250px; border-radius:20px; object-fit:cover; margin-bottom:20px;" />
+     <img src="data:image/jpeg;base64,{img_pt}" style="width:500px; height:290px; border-radius:20px; object-fit:cover; margin-bottom:20px;" />
     <h1 style="font-size:52px; font-weight:bold;">Bienvenido</h1>
     <p style="font-size:22px; margin-top:8px;">
         La evolución de tu industria comienza aquí.<br>
@@ -74,7 +117,7 @@ st.markdown(f"""
     100% {{opacity:1; transform:translateY(0);}}
 }}
 .hero-text-container a:hover {{
-    background:#e6b800;
+    background: #A295C1;
 }}
 </style>
 """, unsafe_allow_html=True)
@@ -98,7 +141,7 @@ st.markdown(f"""
 }}
 .about-us-card:hover {{
     transform: translateY(-7px) scale(1.02);
-    box-shadow: 0 14px 38px 0 #ffd16630, 0 2px 18px rgba(44,62,80,0.12);
+    box-shadow: 0 14px 38px 0 #A295C130, 0 2px 18px rgba(44,62,80,0.12);
 }}
 .about-us-left {{
     flex: 1;
@@ -110,7 +153,7 @@ st.markdown(f"""
     gap: 16px; /* espacio entre logos */
 }}
 .about-us-left img {{
-    width: 120px;
+    width: 400px;
     height: 120px;
     border-radius: 24px;
     object-fit: cover;
@@ -137,7 +180,7 @@ st.markdown(f"""
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 12px;
-    color: #ffd166;
+    color: #A295C1;
 }}
 @media (max-width: 900px) {{
     .about-us-card {{
@@ -188,7 +231,7 @@ st.markdown(f"""
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #ffd166;
+    color: #A295C1;
     text-align: center;
 }}
 .industry-intro {{
@@ -203,7 +246,7 @@ st.markdown(f"""
 }}
 
 .industry-card {{
-    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
@@ -218,6 +261,7 @@ st.markdown(f"""
 
 
 .industry-name {{
+    text-align: center;
     font-weight: 700;
     margin-bottom: 8px;
 }}
@@ -239,25 +283,29 @@ st.markdown(f"""
     </div>
     <div class="industry-grid">
         <div class="industry-card">
-            <div class="industry-name">Minería</div>
-            <div class="industry-description">Seguridad, trazabilidad y mantenimiento predictivo</div>
+            <div class="industry-name">Minería y Metalurgia Extractiva</div>
+            <div class="industry-description">Monitoreo avanzado, trazabilidad, análisis predictivo y seguridad operacional.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Metalurgia</div>
-            <div class="industry-description">Optimización de procesos y reducción de pérdidas</div>
-        </div>
-        <div class="industry-card">
-            <div class="industry-name">Agroindustria</div>
-            <div class="industry-description">Trazabilidad, manejo hídrico y control de plagas</div>
+            <div class="industry-name">Metalurgia Física</div>
+            <div class="industry-description">Ensayos, caracterización, control de calidad y optimización de procesos metalúrgicos.</div>
         </div>
         <div class="industry-card">
             <div class="industry-name">Energía</div>
-            <div class="industry-description">Redes inteligentes y eficiencia en generación y distribución</div>
+            <div class="industry-description">Redes inteligentes, eficiencia energética y soluciones integradas de gestión.</div>
         </div>
         <div class="industry-card">
-            <div class="industry-name">Manufactura y Pesca</div>
-            <div class="industry-description">Automatización modular y adaptación a mercados globales</div>
+            <div class="industry-name">Hidrocarburos</div>
+            <div class="industry-description"> Integridad de activos, operación segura y monitoreo en tiempo real.</div>
         </div>
+        <div class="industry-card">
+            <div class="industry-name">Agroindustria</div>
+            <div class="industry-description">Trazabilidad, control ambiental, manejo hídrico y gestión de calidad.</div>
+        </div>
+        <div class="industry-card">
+            <div class="industry-name">Manufactura</div>
+            <div class="industry-description">Automatización modular, control de procesos y eficiencia operativa continua.</div>
+        </div>        
     </div>
     <div class="industry-footer">
         Visualiza la solución que transforma tu operación y acerca el futuro a tu realidad.
@@ -282,7 +330,7 @@ st.markdown(f"""
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #ffd166;
+    color: #A295C1;
     text-align: center;
 }}
 .services-intro {{
@@ -297,7 +345,7 @@ st.markdown(f"""
 }}
 
 .services-card {{
-    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
@@ -332,10 +380,16 @@ st.markdown(f"""
     </div>
     <div class="services-grid">
         <div class="services-card">
-            <div class="services-name">Monitoreo básico y avanzado</div>
+            <div class="services-name">Monitoreo básico</div>
         </div>
         <div class="services-card">
-            <div class="services-name">Mantenimiento predictivo y análisis de datos</div>
+            <div class="services-name">Monitoreo avanzado</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">Mantenimiento predictivo inteligente</div>
+        </div>
+        <div class="services-card">
+            <div class="services-name">Data analitics</div>
         </div>
         <div class="services-card">
             <div class="services-name">Digital Twins y simulación</div>
@@ -374,7 +428,7 @@ st.markdown(f"""
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 16px;
-    color: #ffd166;
+    color: #A295C1;
 }}
 .timeline-intro {{
     font-size: 1.05rem;
@@ -393,12 +447,12 @@ st.markdown(f"""
     left: 5%;
     width: 90%;
     height: 10px;
-    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     border-radius: 5px;
     z-index: 0;
 }}
 .phase-card {{
-    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     color: #253451;
     border-radius: 16px;
     padding: 20px;
@@ -481,7 +535,7 @@ st.markdown(f"""
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    color: #ffd166;
+    color: #A295C1;
     margin-bottom: 16px;
 }}
 .lab-intro {{
@@ -495,7 +549,7 @@ st.markdown(f"""
     gap: 20px;
 }}
 .lab-card {{
-    background: linear-gradient(135deg, #ffd166 0%, #ffb347 100%);
+    background: linear-gradient(135deg, #C9BFE7 0%, #E0D9F0 100%);
     color: #253451;
     border-radius: 16px;
     padding: 18px;
@@ -550,56 +604,76 @@ st.markdown(f"""
 
 
 # ==============================
-# SECCIÓN: INSPECTORES CERTIFICADOS
+# SECCIÓN: CONTACTO PLEGABLE (con st.expander)
 # ==============================
-st.markdown('<div id="inspectores" style="margin-top:20px;"></div>', unsafe_allow_html=True)
-st.markdown(f"""
-<style>
-.inspectors-section {{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    background: #f5f5f5;
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 32px;
-}}
-.inspectors-title {{
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #253451;
-}}
-.inspectors-logos {{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-}}
-.inspectors-card {{
-    background: white;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: transform .33s, box-shadow .33s;
-}}
-.inspectors-card:hover {{
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.2);
-}}
-.inspectors-card img {{
-    width: 360px;
-    height: 120px;
-    object-fit: contain;
-}}
-</style>
+st.markdown('<div id="contacto" style="margin-top:40px;"></div>', unsafe_allow_html=True)
 
-<div class="inspectors-section">
-    <div class="inspectors-title">Contamos con inspectores certificados</div>
-    <div class="inspectors-logos">
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_api}" /></div>
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_asnt}" /></div>
-        <div class="inspectors-card"><img src="data:image/png;base64,{img_aws}" /></div>
-    </div>
+# ----------------------------------------------------
+# 1. ENCABEZADO DE LA SECCIÓN (Markdown sin el contenido)
+# ----------------------------------------------------
+st.markdown("""
+<div class="contact-section-header" style="
+    background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%);
+    border-radius: 20px 20px 0 0; /* Bordes solo arriba */
+    padding: 28px;
+    color: white;
+">
+    <div style="font-size: 1.8rem; font-weight: 700; color: #A295C1; text-align: center; margin-bottom: 5px;">Hablemos de tu Evolución</div>
+    <div style="font-size: 1.05rem; text-align: center;">Haz clic para desplegar el formulario de contacto.</div>
 </div>
 """, unsafe_allow_html=True)
+
+# ----------------------------------------------------
+# 2. CONTENIDO PLEGABLE (st.expander)
+# ----------------------------------------------------
+with st.expander("Abrir Formulario y Opciones de Contacto", expanded=False):
+    
+    # ----------------------------------------------------
+    # 2.1. FORMULARIO DE GOOGLE (Incrustado)
+    # ----------------------------------------------------
+    
+    # Reemplaza esta URL con la tuya
+    GOOGLE_FORM_URL = "https://forms.gle/nfN3effJfcoqDSQ29" 
+
+    st.markdown("### 📧 Formulario de Contacto")
+    
+    # Usamos st.container para darle un borde visual al iframe
+    with st.container(border=True):
+        components.iframe(
+            GOOGLE_FORM_URL,
+            height=600, # Ajusta la altura según lo necesites
+            scrolling=True
+        )
+    
+    # ----------------------------------------------------
+    # 2.2. BOTÓN DE WHATSAPP (Añadido para contacto directo)
+    # ----------------------------------------------------
+    numero_wps = "51923739372" # Tu número con código de país + número
+    mensaje_wps = "Hola, he visitado su página de Streamlit y me gustaría tener más información sobre sus soluciones digitales."
+    import urllib.parse
+    mensaje_codificado = urllib.parse.quote(mensaje_wps)
+    url_wps = f"https://wa.me/{numero_wps}?text={mensaje_codificado}"
+
+    st.markdown(f"""
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 5px;">
+        <a href="{url_wps}" target="_blank" style="text-decoration: none;">
+            <div style="
+                display: inline-block;
+                padding: 12px 25px;
+                border-radius: 8px;
+                background-color: #25D366; 
+                color: white;
+                font-weight: bold;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+            ">
+                🟢 Contáctanos por WhatsApp
+            </div>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
+# ----------------------------------------------------
+# 3. Cierre visual de la sección (opcional)
+# ----------------------------------------------------
+st.markdown('<div style="background: linear-gradient(135deg, #2e2e2e 0%, #4d4d4d 100%); height: 20px; border-radius: 0 0 20px 20px; margin-bottom: 32px;"></div>', unsafe_allow_html=True)
